@@ -5,28 +5,59 @@ footer {
   padding: 15px;
 }
 
+.btn-container{
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+ 
+}
+
+.btn-level{
+  margin: 0 10px;  
+}
+
+.life-and-smiley{
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  padding: 0 120px
+
+}
+
+.btn-smiley {
+  
+  /* background-color: rgb(110, 206, 110); */
+  margin: auto;
+  padding-bottom: 5px;
+  font-size: 30px;
+  border-radius: 7px;
+  border: transparent;
+  background-color: transparent;
+}
+
 table {
   border-collapse: collapse;
   margin: auto;
-  width: 300px;
+  width: 300px ;
   height: 300px;
   text-align: center;
+  border: 3px solid black; 
 }
 
 .main-container {
   padding: 10px;
-  min-height:  calc(100vh - 208px);
-
+  min-height: calc(100vh - 208px);
 }
 
 td {
-  border: 1px solid black;
+  border: 1.5px solid black;
   padding: 10px;
   width: 50px;
+  background-color: blue;
 }
 
 .footer {
-  background-color: pink;
+  background-color: rgb(255, 208, 239);
   margin-top: 10px;
   margin-bottom: none;
 }

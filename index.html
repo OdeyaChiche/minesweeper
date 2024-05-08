@@ -7,17 +7,35 @@
 
   <body onload="onInit()">
     <h1>Minesweeper</h1>
+
+    <div class="btn-container">
+      <button class="btn-level" onclick="chooseLevel(4,2)">Beginner</button> |
+      <button class="btn-level" onclick="chooseLevel(8,14)">Medium</button> |
+      <button class="btn-level" onclick="chooseLevel(12,32)">Expert</button>
+    </div>
+
+    <div class="life-and-smiley">
+      <span class="life"> </span>
+      <button class="btn-smiley" onclick="resetGame()"></button>
+      <span class="timer"></span>
+    </div>
     <!-- <h2>Score: <span class="score">0</span></h2> -->
 
-    <div class="main-container"><table class="game-container">
-      <tbody class="board"></tbody>
-    </table>
-</div>
+    <div class="main-container">
+      <table class="game-container">
+        <tbody class="board"></tbody>
+      </table>
+    </div>
     <!-- <button onclick="onInit()">Restart</button> -->
 
     <script src="js/utils.js"></script>
     <script src="js/minesweeper.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/cell.js"></script>
+    <script src="js/mines.js"></script>
+    <script src="js/life.js"></script>
+    <script src="js/timer.js"></script>
 
-    <footer class="footer">Odeya Chicheportiche</footer>
+    <footer class="footer">🌸 Odeya Chicheportiche 🌸</footer>
   </body>
 </html>
