@@ -15,7 +15,8 @@
     </div>
 
     <div class="life-and-smiley">
-      <span class="life"> </span>
+      <span class="marked-mines"></span> <span class="life"> </span>
+
       <button class="btn-smiley" onclick="resetGame()"></button>
       <span class="timer"></span>
     </div>
@@ -23,10 +24,22 @@
 
     <div class="main-container">
       <table class="game-container">
+        <!-- <span class="hints-container"></span> -->
         <tbody class="board"></tbody>
       </table>
     </div>
     <!-- <button onclick="onInit()">Restart</button> -->
+
+    <div class="options">
+      <button class="safe-click" onclick="safeClick(gBoard)">
+        Safe Click<br />
+        3 clicks available
+      </button>
+
+      <button class="mine-exterminator" onclick="mineExterminator(gMines)">
+        Mines Exterminator
+      </button>
+    </div>
 
     <script src="js/utils.js"></script>
     <script src="js/minesweeper.js"></script>
@@ -35,6 +48,7 @@
     <script src="js/mines.js"></script>
     <script src="js/life.js"></script>
     <script src="js/timer.js"></script>
+    <script src="js/extra.js"></script>
 
     <footer class="footer">🌸 Odeya Chicheportiche 🌸</footer>
   </body>

@@ -7,25 +7,32 @@ const LIFE = '❤️'
 const SMILEY = '😀'
 const LOSER = '💀'
 const WINNER = '😎'
+const HINT = '💡'
 
 var gBoard = []
 var gLevel = { size: 8, mines: 14 }
 var gGame = {}
 var gMines = []
 var gLives = []
-var gTimer= 0
+var gHints = []
+var gTimer = 0
+var gMarkedMines
 
 function onInit() {
   resetMines()
   gBoard = buildBoard()
   renderBoard(gBoard)
 
-  document.querySelector('.timer').innerText = `Time: ${0}s`
+  document.querySelector('.timer').innerText = `${0}s`
+  setHints()
+  gMarkedMines = 14
+  displayNumOfdMines()
 
   console.log(gMines)
 }
 
 function chooseLevel(chosenSize, levelMines) {
+  stopTimer()
   if (gLevel.size != chosenSize && gLevel.mines != levelMines) {
     gLevel.size = chosenSize
     gLevel.mines = levelMines
@@ -88,15 +95,3 @@ function renderSmiley(emoji) {
   var elbtn = document.querySelector('.btn-smiley')
   elbtn.innerText = `${emoji}`
 }
-
-
-
-
-
-
-
-
-
-
-
-

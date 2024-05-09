@@ -1,63 +1,145 @@
+body {
+  background-image: url('img/mine.jpg');
+  background-size: cover;
+}
+
 h1,
 footer {
+  color: beige;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 30px;
   text-align: center;
-  padding: 15px;
+  padding: 5px;
 }
 
-.btn-container{
-  display: flex; 
-  justify-content: center; 
+.btn-container {
+  display: flex;
+  justify-content: center;
   align-items: center;
- 
+}
+.btn-level {
+  cursor: pointer;
+  margin: 0 10px;
+  background-color: rgb(143, 103, 71);
+  border-radius: 40%;
+  width: 100px;
+  height: 40px;
 }
 
-.btn-level{
-  margin: 0 10px;  
+.btn-level:hover {
+  background-color: rgb(178, 178, 156);
 }
 
-.life-and-smiley{
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  padding: 0 120px
+.timer {
+  color: beige;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
 
+.life-and-smiley {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 120px;
+
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.life {
+  font-size: 25px;
 }
 
 .btn-smiley {
-  
-  /* background-color: rgb(110, 206, 110); */
-  margin: auto;
-  padding-bottom: 5px;
-  font-size: 30px;
-  border-radius: 7px;
+  margin: 30px;
+  padding: 10px;
+  font-size: 25px;
   border: transparent;
   background-color: transparent;
+  cursor: pointer;
 }
 
 table {
   border-collapse: collapse;
   margin: auto;
-  width: 300px ;
+  width: 300px;
   height: 300px;
   text-align: center;
-  border: 3px solid black; 
+  border: 3px solid black;
+  table-layout: fixed;
 }
 
 .main-container {
   padding: 10px;
-  min-height: calc(100vh - 208px);
+  background-color: rgba(241, 233, 223, 0.473);
+  /* display: inline-block; */
+  border-radius: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 35%;
+  margin-right: 35%;
+
+  /* min-height: calc(100vh - 208px); */
 }
 
 td {
+  font-size: inherit;
   border: 1.5px solid black;
-  padding: 10px;
-  width: 50px;
-  background-color: blue;
+  padding: none;
+  width: 10px;
+  height: 10px;
+  /* box-shadow: 30px 5px 10px rgba(71, 25, 8, 0.5);
+  box-shadow: 5px 0px 10px rgba(184, 131, 110, 0.5);
+  background: linear-gradient(to bottom, #ffffff00, #c1aeae3e 5%, #ffffff00); */
+  cursor: pointer;
+}
+
+td:hover {
+  background-color: rgba(169, 160, 137, 0.724);
 }
 
 .footer {
-  background-color: rgb(255, 208, 239);
+  color: grey;
+  background-color: rgb(207, 207, 207);
   margin-top: 10px;
   margin-bottom: none;
+}
+
+.safe-click,
+.mine-exterminator {
+  width: 150px;
+  height: 40px;
+  background-color: rgba(255, 14, 14, 0.568);
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  border: 3px solid black;
+}
+
+.hints {
+  background-color: blue;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.marked-mines {
+  border: 2px solid #000000;
+  text-align: center;
+  color: white;
+  background-color: rgba(98, 54, 27, 0.463);
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: bold;
+  font-size: 30px;
+  margin: 30px;
+}
+
+.highlight {
+  background-color: greenyellow;
 }

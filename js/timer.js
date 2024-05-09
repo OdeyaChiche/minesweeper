@@ -6,12 +6,12 @@ function startTimer() {
 
     gTimer = setInterval(function () {
         const diff = Date.now() - start
-        const secs = parseInt(diff / 100)
+        const secs = parseInt(diff / 1000)
 
-        var ms = (diff - secs * 100) + ''
-        ms = ms.padStart(2, '0')
+        var ms = (diff - secs * 1000) + ''
+        ms = ms.padStart(3, '0')
 
-        elTimer.innerText = `Time: ${secs}.${ms}s`;
+        elTimer.innerText = `${secs}.${ms}s`
     }, 29);
 }
 

@@ -1,7 +1,7 @@
 'use strict'
 
 function setLives(numOfLives) {
-    while (gLives.length < 3) {
+    while (gLives.length < numOfLives) {
       gLives.push(LIFE)
     }
   }
