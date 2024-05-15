@@ -3,9 +3,10 @@
 function checkGameOver() {
   var elTimer
   if (gLives.length === 0) {
+    gGame.isOn = false
+    gGame.isDone = true
     renderSmiley(LOSER)
     playLosingSound()
-    gGame.isDone = true
     stopTimer()
   }
   if (
@@ -44,6 +45,10 @@ function resetGame() {
   renderLives()
   renderBoard(gBoard)
   resetMines()
+  if (gLevel.size === 4) gMarkedMines = 2
+  if (gLevel.size === 8) gMarkedMines = 14
+  if (gLevel.size === 12) gMarkedMines = 32
+  displayNumOfdMines()
 
   gClicksAvailable = 4
   elBtnSafeClick = document.querySelector('.safe-click')

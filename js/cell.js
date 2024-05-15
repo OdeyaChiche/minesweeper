@@ -43,9 +43,11 @@ function renderCell(elCell, i, j) {
     gBoard[i][j].isShown !== true
   ) {
     elCell.innerText = MINE
+
+    gMarkedMines--
+    displayNumOfdMines()
     if (gLevel.size > 4) displayNumOfdMines()
     gGame.markedCount++
-    // displayNumOfdMines()
 
     gLives.pop()
     renderLives()
@@ -124,16 +126,19 @@ function expandShown(elCell, iPos, jPos) {
 }
 
 function onCellMarked(elCell, i, j) {
-  if (gGame.isDone !== true) {
+  if (gGame.isOn === true) {
     document.addEventListener('contextmenu', function (event) {
       event.preventDefault()
     })
 
     if (gBoard[i][j].isMarked === false && gBoard[i][j].isShown !== true) {
       elCell.innerText = FLAG
-
-      if (gLevel.size > 4) displayNumOfdMines()
       gBoard[i][j].isMarked = true
+
+      gMarkedMines--
+      displayNumOfdMines()
+
+      // if (gLevel.size > 4) displayNumOfdMines()
 
       if (gBoard[i][j].isMine === true && gBoard[i][j].isShown !== true) {
         gGame.markedCount++
@@ -142,9 +147,13 @@ function onCellMarked(elCell, i, j) {
     } else if (gBoard[i][j].isMarked === true) {
       elCell.innerText = EMPTY
       gMarkedMines++
+      displayNumOfdMines()
+
       gBoard[i][j].isMarked = false
+
       if (gBoard[i][j].isMine === true) {
         gGame.markedCount--
+      
         gBoard[i][j].isShown = false
       }
     }

@@ -16,7 +16,7 @@ var gMines = []
 var gLives = []
 var gHints = []
 var gTimer = 0
-var gMarkedMines
+var gMarkedMines = 14
 
 function onInit() {
   resetMines()
@@ -25,8 +25,15 @@ function onInit() {
 
   document.querySelector('.timer').innerText = `${0}s`
   setHints()
-  gMarkedMines = 14
+
+  if (gLevel.size === 4) gMarkedMines = 2
+  if (gLevel.size === 8) gMarkedMines = 14
+  if (gLevel.size === 12) gMarkedMines = 32
+
   displayNumOfdMines()
+
+  gClicksAvailable = 3
+  safeClick()
 
   console.log(gMines)
 }
@@ -38,6 +45,8 @@ function chooseLevel(chosenSize, levelMines) {
     gLevel.mines = levelMines
   }
   console.log(gLevel)
+
+  gMarkedMines = gLevel.mines
   onInit()
 }
 

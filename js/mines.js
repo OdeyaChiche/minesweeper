@@ -50,11 +50,10 @@ function resetMines() {
 
 function mineExterminator(mines) {
   if (
-    (gLevel.size === 8 && gLevel.mines > 11) ||
-    (gLevel.size === 12 && gLevel.mines > 30)
+    (gLevel.size === 8 && gLevel.mines > 11 && gGame.isOn === true) ||
+    (gLevel.size === 12 && gLevel.mines > 30 && gGame.isOn === true)
   ) {
     var numOfEliminatedMines = 3
-    var removedMine
     var removedMines = []
     var checkmine = mines.length - 1
 
@@ -87,7 +86,7 @@ function mineExterminator(mines) {
     console.log(removedMines)
     console.log(gBoard)
     console.log(gMines)
-    gMarkedMines-=2
+    gMarkedMines -= 3
     displayNumOfdMines()
   }
 }
@@ -96,7 +95,7 @@ function displayNumOfdMines() {
   if (gMarkedMines >= 0) {
     var elNumOfMines = document.querySelector('.marked-mines')
     elNumOfMines.innerText = gMarkedMines
-    gMarkedMines--
+    // gMarkedMines--
     console.log(gMarkedMines)
   }
 }
